@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const express = require('express');
 const morgan = require('morgan');
 
@@ -23,7 +24,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// 3) ROUTES
+// 2) ROUTES
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
