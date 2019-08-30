@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const Tour = require('./../models/tourModel');
+const Tour = require('../models/tourModel');
 
 exports.aliasTopTours = async (req, res, next) => {
   req.query.limit = '5';
