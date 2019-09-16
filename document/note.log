@@ -1,0 +1,3 @@
+scope (technically called lexical scope): is basically a collection of variable as well as the rules for how those varibales are accessed by name.
+Each function gets its own scope
+
