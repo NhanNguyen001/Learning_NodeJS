@@ -8,16 +8,18 @@ exports.aliasTopTours = async (req, res, next) => {
   next();
 };
 
+// get all tours handler
 exports.getAllTours = async (req, res) => {
   try {
-    // EXECUTE QUERY
+    // execute query
     const features = new APIFeatures(Tour.find(), req.query)
       .filter()
       .sort()
       .limitFields()
       .paginate();
     const tours = await features.query;
-    // SEND RESPONSE
+
+    // send response
     res.status(200).json({
       status: 'success',
       results: tours.length,
@@ -33,9 +35,11 @@ exports.getAllTours = async (req, res) => {
   }
 };
 
+// get one tour handler
 exports.getTour = async (req, res) => {
   try {
     const tour = await Tour.findById(req.params.id);
+
     res.status(200).json({
       status: 'success',
       data: {
@@ -50,11 +54,10 @@ exports.getTour = async (req, res) => {
   }
 };
 
+// createTour handler
 exports.createTour = async (req, res) => {
   try {
     const newTour = await Tour.create(req.body);
-    console.log(req.body);
-
     res.status(201).json({
       status: 'success',
       data: {
@@ -69,6 +72,7 @@ exports.createTour = async (req, res) => {
   }
 };
 
+// updateTour handler
 exports.updateTour = async (req, res) => {
   try {
     const tour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
@@ -90,6 +94,7 @@ exports.updateTour = async (req, res) => {
   }
 };
 
+// deleteTour handler
 exports.deleteTour = async (req, res) => {
   try {
     await Tour.findByIdAndDelete(req.params.id);
@@ -110,9 +115,11 @@ exports.deleteTour = async (req, res) => {
   });
 };
 
+// getTourStats handler
 exports.getTourStats = async (req, res) => {
   try {
-    const stats = await Tour.aggregate([{
+    const stats = await Tour.aggregate([
+      {
         $match: {
           ratingsAverage: {
             $gte: 4.5
@@ -149,13 +156,6 @@ exports.getTourStats = async (req, res) => {
           avgPrice: 1
         }
       }
-      // {
-      //   $match: {
-      //     _id: {
-      //       $ne: 'EASY'
-      //     }
-      //   }
-      // }
     ]);
 
     res.status(200).json({
