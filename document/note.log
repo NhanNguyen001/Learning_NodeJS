@@ -1,7 +1,8 @@
 scope (technically called lexical scope): is basically a collection of variable as well as the rules for how those varibales are accessed by name.
 Each function gets its own scope
 
-
+validator: just a really function which should return true or false and if it returns false, then it means there is an error
+ 
 Hasing algorithm called bcrypt: this algorithm will first salt then hash our password in order to make it really strong to protect it against bruteforce attacks.
 
 salt - it's gonna add a random string to the password so that two equal passwords do not generate the same hash 
