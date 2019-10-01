@@ -1,3 +1,11 @@
 scope (technically called lexical scope): is basically a collection of variable as well as the rules for how those varibales are accessed by name.
 Each function gets its own scope
 
+
+Hasing algorithm called bcrypt: this algorithm will first salt then hash our password in order to make it really strong to protect it against bruteforce attacks.
+
+salt - it's gonna add a random string to the password so that two equal passwords do not generate the same hash 
+
+Bruteforce attacks could try to guess a certain passwords if it's not really strong encrypted
+
+
