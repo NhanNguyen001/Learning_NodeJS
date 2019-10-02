@@ -9,4 +9,8 @@ Salt - it's gonna add a random string to the password so that two equal password
 
 Bruteforce attacks could try to guess a certain passwords if it's not really strong encrypted
 
+all communication must happen over https so secure encrypted http in order to prevent that anyone can get access to passwords or Json Web Tokens
 
+
+Using the standard HSA 256 encryption for the signature, the secret should
+at least be thirty two characters long, but the longer the better actually
