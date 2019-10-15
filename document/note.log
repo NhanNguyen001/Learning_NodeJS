@@ -14,3 +14,5 @@ all communication must happen over https so secure encrypted http in order to pr
 
 Using the standard HSA 256 encryption for the signature, the secret should
 at least be thirty two characters long, but the longer the better actually
+
+Everything related to passwords and to the user we have to use save()
